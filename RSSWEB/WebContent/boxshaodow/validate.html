@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script language="JavaScript" type="text/javascript">
+function check_form()
+{
+//Khai báo các biến để lấy giá trị từ người dùng khi họ nhập dữ liệu vào form.
+hoten=document.formlienhe.txthovaten.value
+mail=document.formlienhe.txtmail.value
+diachi=document.formlienhe.txtdiachi.value
+dienthoai=document.formlienhe.txtdienthoai.value
+noidung=document.formlienhe.textnoidung.value
+
+//Khai báo các biến để thông báo lỗi khi có lỗi xảy ra ^^!
+var loiht=document.all("idht");
+var loimail=document.all("idmail");
+var loidc=document.all("iddc");
+var loidt=document.all("iddt");
+var loind=document.all("idnd");
+//Check ô họ và tên
+if(hoten=="") //Nếu họ tên bỏ trống không nhập gì hết
+{
+document.formlienhe.txthovaten.style.backgroundColor='red'; //Đổi màu nền ô textbox
+loiht.innerHTML="Ho ten ko dc bo trong !"; //Xuất ra dòng thông báo lỗi nếu họ tên bỏ trống.
+document.formlienhe.txthovaten.focus(); //Đặt lại tiêu điểm (Tức là con trot chuột ấy) vào ô bị lỗi
+return; //Quay lại check tiếp khi nhận đc tiêu điểm .
+}
+loiht.innerHTML=""; //Xóa dòng thông báo lỗi khi nhập đúng.
+
+//check mail cũng tuwowg tự y hệt như trên
+dangmail= /^[\w.-]+@[\w.-]+\.[A-Za-z]{2,4}$/ //Tạo biểu thức quy tắc (tức là định dạng 1 mail nó như thế nào).
+kq=dangmail.test(mail); //Kiểm tra mail mà người dùng nhập vào.
+if(mail=="") //Nếu mail bỏ trống
+{
+document.formlienhe.txtmail.style.backgroundColor='red';
+loimail.innerHTML="Mail ko dc bo trong !";
+document.formlienhe.txtmail.focus();
+return;
+
+}
+loimail.innerHTML="";
+if(kq==false)
+{
+	document.formlienhe.txtmail.style.backgroundColor='red';
+	document.loimail.innerHTML="Sai dinh dang mail !";
+	document.formlienhe.txtmail.focus();
+return;
+}
+loimail.innerHTML="";
+if(diachi=="")
+{
+	document.formlienhe.txtdiachi.style.backgroundColor='red';
+	loidc.innerHTML="Dia chi khong duoc bo trong !";
+	document.formlienhe.txtdiachi.focus();
+return;
+}
+loidc.innerHTML="";
+if(dienthoai=="")
+{
+	document.formlienhe.txtdienthoai.style.backgroundColor='red ';
+	loidc.innerHTML="Dien thoai khong duoc bo trong !";
+	document.formlienhe.txtdienthoai.focus();
+return;
+}
+loidt.innerHTML="";
+
+if(isNaN(dienthoai))
+{
+	document.formlienhe.txtdienthoai.style.backgroundColor='red ';
+	document.loidc.innerHTML="Ban phai nhap vao mot so !";
+	document.formlienhe.txtdienthoai.focus();
+return;
+}
+loidt.innerHTML="";
+if(noidung=="")
+{
+	document.formlienhe.textnoidung.style.backgroundColor='red' ;
+	loidc.innerHTML="Noi dung khong duoc bo trong !";
+	document.formlienhe.textnoidung.focus();
+return;
+}
+loind.innerHTML="";
+document.formlienhe.submit();
+
+}
+</script>
+
+</head>
+<body>
+<form id="formlienhe" name="formlienhe" method="post" action="" >
+<table width="597" height="294" border="0" cellpadding="4" cellspacing="6">
+<tr>
+<td width="201">Ho va ten : </td>
+<td width="374"><label>
+<input name="txthovaten" type="text" id="txthovaten" size="50" />
+<br /> <span id="idht"></span></label></td>
+</tr>
+<tr>
+<td>Email : </td>
+<td><input name="txtmail" type="text" id="txtmail" size="50" />
+<br /><span id="idmail"></span></td>
+</tr>
+<tr>
+<td>Dia chi </td>
+<td><input name="txtdiachi" type="text" id="txtdiachi" size="50" />
+<br /><span id="iddc"></span></td>
+</tr>
+<tr>
+<td>Dien thoai : </td>
+<td><input name="txtdienthoai" type="text" id="txtdienthoai" size="50" /><br /><span id="iddt"></span></td>
+</tr>
+<tr>
+<td>Noi dung : </td>
+<td><label>
+<textarea name="textnoidung" cols="55" rows="5" id="textnoidung"></textarea>
+<br /><span id="idnd"></span></label></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><label>
+<input name="btguitongtin" type="button" id="btguitongtin" value=" Gui thong tin " onclick="return checkform()/>
+<input name="btxoadangki" type="reset" id="btxoadangki" value=" Xoa dang ki " />
+</label></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

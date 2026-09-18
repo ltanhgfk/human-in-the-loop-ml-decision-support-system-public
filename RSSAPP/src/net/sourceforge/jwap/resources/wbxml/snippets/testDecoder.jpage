@@ -1,0 +1,15 @@
+//Test code to test the WBXML decoder that decodes a WBXML document (bytes) into WML document
+
+
+java.io.FileInputStream tokenStream = new java.io.FileInputStream("C:\\home\\suvarna\\Projects\\WBXML Parser\\syncml-001.wbxml");
+java.io.FileOutputStream xmlStream = new java.io.FileOutputStream("C:\\home\\suvarna\\Projects\\WBXML Parser\\mywapcontent.xml");
+org.w3c.dom.Document document = net.sourceforge.jwap.util.wbxml.WBXMLDecoder.getInstance().decode(tokenStream);
+org.apache.xml.serialize.OutputFormat of = new org.apache.xml.serialize.OutputFormat(document);
+org.apache.xml.serialize.XMLSerializer serial = new org.apache.xml.serialize.XMLSerializer(xmlStream,of);
+//org.apache.xml.serialize.TextSerializer serial1 = new org.apache.xml.serialize.TextSerializer();
+serial.setOutputByteStream(xmlStream);
+serial.setOutputFormat(of);
+serial.asDOMSerializer();
+serial.serialize(document);
+xmlStream.close();  
+tokenStream.close();

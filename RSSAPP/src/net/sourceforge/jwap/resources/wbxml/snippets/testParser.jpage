@@ -1,0 +1,12 @@
+
+
+System.setProperty("org.xml.sax.driver","org.apache.xerces.parsers.SAXParser");
+Class.forName("org.apache.xerces.parsers.SAXParser");
+
+javax.xml.parsers.SAXParser parser = javax.xml.parsers.SAXParserFactory.newInstance().newSAXParser(); 
+//org.xml.sax.XMLReader reader = org.xml.sax.helpers.XMLReaderFactory.createXMLReader();
+org.xml.sax.InputSource xmlSource = new org.xml.sax.InputSource("C:\\Workspaces\\workspace\\wbxml Parser\\syncml-002.xml");
+parser.parse(xmlSource)
+
+reader.parse(xmlSource);
+

@@ -1,0 +1,21 @@
+
+byte[] multipleBytes = new byte[4];
+multipleBytes[0] = (byte) 0x01;
+multipleBytes[1] = (byte) 0x20;
+StringBuffer strBuf = new StringBuffer();
+int i =0;
+while(multipleBytes[i]!=0) {
+	String str = Integer.toBinaryString(multipleBytes[i++]);
+       if(str.length() < 7) {
+     	int zerosToPumpIn = 7 - str.length();
+     	for (int j = 0; j < zerosToPumpIn; j++) {
+		  	strBuf.append('0');
+         }	
+       }
+         strBuf.append(str);
+     
+}
+System.out.println(strBuf);    
+System.out.println(Integer.valueOf(strBuf.toString(),2));
+
+Integer.toHexString(160)

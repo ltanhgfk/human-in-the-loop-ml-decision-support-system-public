@@ -1,0 +1,35 @@
+# IDE / OS
+.classpath
+.project
+.settings/
+*.prefs
+.DS_Store
+Thumbs.db
+
+# Java build output
+bin/
+build/
+target/
+*.class
+
+# Runtime/private configuration
+*.local
+*.secret
+RSSAPP/smsconf/
+RSSAPP/db.properties
+RSSAPP/tokenizer.log
+RSSAPP/tokenizer.log.lck
+
+# Data / trained models / private payloads
+*.model
+*.train
+*.vector
+*.mms
+*.wbxml
+RSSAPP/mms/
+RSSAPP/classifications/
+RSSAPP/images/
+RSSWEB/WebContent/images/
+
+# Dependency binaries
+*.jar

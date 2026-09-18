@@ -1,0 +1,20 @@
+
+
+
+//System.setProperty("org.xml.sax.driver","org.apache.xerces.parsers.SAXParser");
+//Test code to test the WBXML encoder that encodes a WML document into WBXML format
+
+
+
+System.setProperty("org.xml.sax.driver","org.apache.crimson.parser.XMLReaderImpl");
+java.io.FileInputStream xmlStream = new java.io.FileInputStream("C:\\workspaces\\WBXMLWorkspace\\wbxml Converter\\testsuite\\syncml\\input\\syncml-001.xml");
+java.io.FileOutputStream fo = new java.io.FileOutputStream("C:\\workspaces\\WBXMLWorkspace\\wbxml Converter\\testsuite\\syncml\\output\\syncml-001.wbxml");
+java.io.ByteArrayOutputStream tokens = (java.io.ByteArrayOutputStream) net.sourceforge.jwap.util.wbxml.WBXMLEncoder.getInstance().encode(xmlStream);
+xmlStream.close();  
+tokens.writeTo(fo);
+tokens.close();
+fo.flush();
+fo.close();
+
+
+

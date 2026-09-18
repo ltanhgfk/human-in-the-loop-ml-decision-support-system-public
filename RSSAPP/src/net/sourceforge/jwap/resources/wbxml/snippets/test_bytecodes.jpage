@@ -1,0 +1,35 @@
+
+//Test code to get the hexadecimal values of bytes from a WBXML document (bytes) 
+
+net.sourceforge.jwap.util.wbxml.TokenRepository tokenRepository = net.sourceforge.jwap.util.wbxml.TokenRepository.getInstance("FD3");
+
+java.io.FileInputStream tokenStream = new java.io.FileInputStream(net.sourceforge.jwap.util.wbxml.TokenRepository.class.getResourceAsStream("/net/sourceforge/jwap/resources/wbxml/testsuite/syncml/input/syncml-001.wbxml"));
+java.io.FileOutputStream byteStream = new java.io.FileOutputStream("syncml-001.bytes");
+
+byte b = (byte) tokenStream.read();
+while(b != -1) {
+	
+	if(b >=0)
+	System.out.print(b +"  "+ Integer.toHexString(b));
+		else
+		System.out.print(b +"  "+ Integer.toHexString(b).substring(6));
+	byteStream.write(b);
+	byte maskedTokenValue = b;
+			byte actualTokenValue = (byte) (maskedTokenValue & ((byte) 0x3f));
+			String tagName = tokenRepository.getTagName(actualTokenValue);
+	System.out.println(tagName);
+	b = (byte) tokenStream.read();
+	
+}	
+tokenStream.close();
+byteStream.close();
+
+
+
+
+
+java.util.Properties tokenRepositoryMappings = new java.util.Properties();
+tokenRepositoryMappings.load(net.sourceforge.jwap.util.wbxml.TokenRepository.class.getResourceAsStream("/net/sourceforge/jwap/resources/wbxml/tokenRepositoryMappings.properties"));
+tokenRepositoryMappings.getProperty("2");
+
+

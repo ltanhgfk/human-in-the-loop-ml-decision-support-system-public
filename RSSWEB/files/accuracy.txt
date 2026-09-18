@@ -1,0 +1,1 @@
+﻿Theo nghi thức kiểm tra chéo 10 folds: 68.35106382978724%, huấn luyện lần cuối: 06-03-2014 13:22:32

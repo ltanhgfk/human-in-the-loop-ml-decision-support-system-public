@@ -1,0 +1,447 @@
+*html {
+	height: 100%;
+	padding-bottom: 1px; /* force scrollbars */
+	margin: 0px ;
+    _margin: 0px ;
+}
+*
+{
+  margin: 0px ;
+  _margin: 0px ;
+  padding: 0;
+    
+ }
+body
+{
+  margin: 0 auto;
+  padding: 0;  
+  /* font-family: Arial, Helvetica, Sans-Serif;*/
+  font:bold 12px Cambria, Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  background-color: #f2f2f3;  
+}
+a
+{
+  text-decoration: none;
+  color: #000;
+}
+
+a:link
+{
+  text-decoration: none;
+  color: #0000;
+}
+
+a:visited
+{
+
+/*	color: #000000;
+	font-size: 18px; */
+	color: red;
+}
+
+a:hover
+{
+
+  text-decoration: none;
+ /* color: blue; */
+}
+
+
+h1
+{
+	text-shadow: 1px 1px 1px blue;
+	font-size: 20px;
+}
+
+form ul{margin:0;padding:0;list-style-type:none}
+form ul li{padding-bottom:0px; text-align: left;}
+.rq, .error{color: red}
+.hide {display: none}
+
+#wrapper-container{
+	text-align:left;
+	background:#fff;	
+	-webkit-box-shadow:rgba(0,0,0,0.2) 0px 0px 5px;
+	-moz-box-shadow:rgba(0,0,0,0.2) 0px 0px 5px;
+	-o-box-shadow:rgba(0,0,0,0.2) 0px 0px 5px;
+	box-shadow:rgba(0,0,0,0.2) 0px 0px 5px}
+#wrapper-container{
+	margin:50px auto 50px auto;
+	width:902px;
+	padding-top:1px;
+	padding-bottom:1px;
+	  clear: both;
+    display: block;
+	}
+
+/******* begin wrapper ***********/
+#wrapper
+{
+    margin: 0px auto 0px auto;
+    width: 900px;
+    height: auto;
+    background-color: #ccc;
+    position:relative;
+    clear: both;
+    display: block;
+   /* border:1px solid #ccc;  */
+}
+/*******  end wrapper ***********/
+
+/******* begin header ***********/
+#header
+{
+    width: 900;
+    height: 125px;    
+    margin: 0px auto;   
+    padding:0px;
+    background-image: url('../images/system/cssmms_banner.png' );
+  
+}
+
+#header-left
+{
+    width: 685px;
+    height: 125px;
+    margin: 0px;
+    padding: 0px; 
+    /*background-image: url('../images/system/cssmms_banner.png' );*/
+    float: left;
+   
+}
+#header-right
+{
+    background-position: top;
+    width: 180px;
+    height: 125px;
+    margin: 0px;
+    padding: 0px;
+    /*background-image: url('../images/system/bg-flash-right.jpg');*/
+    float: right;
+    text-align: center;
+    color: #fff;
+  
+}
+/******* end header ***********/
+
+/******* begin nav ***********/  
+
+#nav
+{
+    margin: 1px auto 0px auto;
+    width: 900px;
+    height: 30px;        
+    background-position: center;
+    position: relative;    
+    clear: both;  
+    background-image: url( '../images/system/bg-nav-hover_02.gif' ); 
+}
+
+/******* end nav ***********/
+
+/******* begin mainbd ***********/
+#wrapper-content
+{
+			background-color: #fff;
+			width: 100%;
+			margin:0px auto;
+			padding:0px;	
+			padding-top:20px;
+			padding-bottom:10px;
+			clear: both;
+			min-height: 350px;
+			text-align: center;
+			font-size: 13px;
+	
+}
+
+#container {
+						
+			margin:0px auto;
+			padding: 0px;
+			padding-top:40px;
+			width: 600px;
+		}
+		
+		.img {
+			-webkit-transform: scale(0.6); /* Safari and Chrome - CSS3*/
+			-moz-transform: scale(0.6); /* Firefox - CSS3*/
+			-o-transform: scale(0.6);
+			/*float: left;*/
+			margin-left: -18px;
+			margin-right: -50px;
+			margin-top: -20px;
+			-webkit-transition-duration: 0.5s; /* 5s - CSS3*/
+			-moz-transition-duration: 0.5s;
+			-o-transition-duration: 0.5s;
+			background-color: #ffffff;
+		}
+		
+		.img img {
+			padding:15px;
+			border: 1px solid #CCCCCC;
+			width: 290px;
+			height: 250px;
+			box-shadow:2px 2px 15px #7D7D7D;
+		}
+		
+		.img:hover {
+			-webkit-transform: scale(0.5);
+			-webkit-box-shadow: 0px 0px 30px #7D7D7D;
+			-moz-transform: scale(0.8);
+			-moz-box-shadow: 0px 0px 30px #7D7D7D;
+			-o-transform: scale(0.8);
+			-o-box-shadow: 0px 0px 30px #7D7D7D;
+		}
+		
+		.img .mask {
+			width: 100%;
+			background-color: #C8DEDE; 
+			height: 100%;
+			opacity: 0.6;
+			cursor: pointer;
+			-webkit-transition-duration: 0.5s;
+			-moz-transition-duration: 0.5s;
+			-o-transition-duration: 0.5s;
+			position: absolute;
+			
+			font-size: 38px;
+			color: #000;
+			font-weight: bold;
+			vertical-align: middle;
+			text-align: center;
+			z-index: 9999;
+		}
+		
+		#img-1:hover .mask {
+			height: 0%;
+		}
+		
+		#img-2:hover .mask {
+			height: 0%;
+			margin-top: 130px;
+		}
+		.mask h3{
+			color:black;
+			font-size: 30px;
+		}
+ 
+
+/******* end mainbd ***********/
+
+
+
+/******* begin footer ***********/
+#footer
+{
+    height: 40px;
+    margin: 0px auto 0px auto;
+    width: 900px;
+    background-color: #2D427B;
+}
+/******* end footer ***********/
+
+
+/*******Nut Dang Nhap ***********/
+
+.btdangnhap input[type="submit"],
+.button-input
+{
+     background: url(../images/system/Bt-Dangnhap2.gif);
+     height:22px;
+	 width:78px;
+	 display:block;	 
+	 text-align:center
+	 color:#fff;
+	 font-weight: bold;	
+}
+
+.btdangnhap input[type="submit"]:hover,
+.button-input:hover {
+    background-position:0px 22px;
+    color:#fff;
+    font-weight: bold;
+}
+
+.btdangnhap .button-input{
+	background:none;
+	border:none;
+	cursor:pointer;
+	font-size:12px;/*Opera*/
+	line-height:22px;/*hover for IE and text placement for FF*/
+	overflow:visible;/*button width for IE*/
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:0px;
+	padding-bottom: 2px;
+	color:#fff;
+}
+/******* End Nut Dang Nhap ***********/
+
+/*******Nut Dang Nhap ***********/
+
+.btdangnhap input[type="button"],
+.button-input
+{
+     background: url(../images/system/Bt-Dangnhap2.gif);
+     height:22px;
+	 width:78px;
+	 display:block;	 
+	 text-align:center
+	 color:#fff;
+	 font-weight: bold;	
+}
+
+.btdangnhap input[type="button"]:hover,
+.button-input:hover {
+    background-position:0px 22px;
+    color:#fff;
+    font-weight: bold;
+}
+
+.btdangnhap .button-input{
+	background:none;
+	border:none;
+	cursor:pointer;
+	font-size:12px;/*Opera*/
+	line-height:22px;/*hover for IE and text placement for FF*/
+	overflow:visible;/*button width for IE*/
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:0px;
+	padding-bottom: 2px;
+	color:#fff;
+}
+/******* End Nut Dang Nhap ***********/
+
+
+
+.box-center-right
+{  
+	position: relative;   
+    float: right;
+    right: 50%;  
+}
+.box-center-left
+{
+    position:relative;    
+    clear:both;    
+    float: left;
+    left: 50%;
+}
+
+
+***************/
+.box-content-rv-580-27{
+	width:400px;
+	height:25px;
+	margin:0 auto;
+	background:url(../images/system/bg-title-between-content.gif) repeat-x;		
+}
+.box-content-rv-580-27-l{
+	background:url(../images/system/bg-title-left-content.gif) no-repeat;
+	width:4px;
+	height:25px;
+	float:left;
+}
+.box-content-rv-580-27-r{
+	background:url(../images/system/bg-title-right-content.gif) no-repeat;
+	width:4px;
+	height:25px;
+	float:right;
+}
+.box-content-rv-580-27-bg
+{
+    background: url(../images/system/bg-title-between-content.gif) repeat-x;
+    height: 25px;   
+    margin:0 auto;    
+}
+.box-content-rv-580-27-bg h3
+{
+    padding-top:5px;
+    font-weight: bold;
+    font-size: 15px;
+    text-transform:uppercase;
+    color: #FFFFFF;
+    }
+/******Text header */
+
+A.textheader:link
+{
+    font-weight: bold;
+    font-size: 12px;
+    color: #fff;
+    text-decoration: none;
+}
+A.textheader:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.textheader:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; TEXT-DECORATION: underline
+}
+    
+ /****** End Text header */   
+ 
+ 
+.paging A.lslink
+{
+    font-weight: bold;
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+}
+.paging A.lslink:hover {
+	FONT-WEIGHT: bold;
+	  font-size: 14px; 
+	 COLOR: blue; 
+	 TEXT-DECORATION: underline;
+}
+
+.paging A.lslink:visited {
+	FONT-WEIGHT: bold;
+	 font-size:14px; 
+	 COLOR: blue;
+	 TEXT-DECORATION: none;
+}   
+ .paging span{
+ 	font-size:15px;
+ 	padding-left: 3px;
+ 	padding-right: 3px;
+ 	FONT-WEIGHT: bold;
+ }
+  
+ /*
+ 
+  
+  A.lslink:link
+{
+    font-weight: bold;
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+}
+
+ A.lslink:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: blue; TEXT-DECORATION: underline
+}
+ A.lslink:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: red; TEXT-DECORATION: none
+}
+
+.lslink span{
+ font-size:15px;
+ 	padding-left: 3px;
+ 	padding-right: 3px;
+ 
+ }
+  */
+ 
+ .div-header{
+ 
+ margin-top: 5px;
+ font-weight: bold; 
+ 
+ }

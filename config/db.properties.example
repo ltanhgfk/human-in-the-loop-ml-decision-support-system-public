@@ -1,0 +1,10 @@
+# Copy this file to db.properties (or the location DbUtil.java expects on
+# the classpath) and fill in your own local values. The real db.properties
+# used by the original project is NOT included in this public repository
+# (see docs/DATA_PRIVACY.md). It only ever contained local development
+# defaults, but credentials files should not be version-controlled
+# regardless of how sensitive the actual values are.
+driver=com.mysql.jdbc.Driver
+url=jdbc:mysql://localhost/assmms
+user=YOUR_USERNAME
+password=YOUR_PASSWORD

@@ -1,0 +1,10 @@
+[PropertyInfo]
+abortCode,short,false,false, , ,true,<vorgabe>
+aborted,boolean,false,false, , ,true,<vorgabe>
+classType,byte,false,false, , ,true,<vorgabe>
+TID,int,false,false, , ,true,<vorgabe>
+[IconNames]
+
+
+
+

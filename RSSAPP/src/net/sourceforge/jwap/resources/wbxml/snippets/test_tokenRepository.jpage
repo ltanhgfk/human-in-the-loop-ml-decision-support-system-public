@@ -1,0 +1,11 @@
+// Test code to test the TokenRepository class
+System.out.println("tag token " + Integer.toHexString(TokenRepository.getInstance().getTagToken("a")));
+System.out.println("attribute name token " + Integer.toHexString(TokenRepository.getInstance().getAttributeNameToken("align","bottom")));
+System.out.println("attribut value  token " + Integer.toHexString(TokenRepository.getInstance().getAttributeValueToken("delete")));
+
+
+
+
+System.out.println("tag token " + TokenRepository.getInstance().getTagName((byte)(0x1c)));
+System.out.println("attribute name token " + TokenRepository.getInstance().getAttributeName((byte)(0x06)));System.out.println("attribut value  token " + TokenRepository.getInstance().getAttributeValue((byte)(0x8c)));
+org.w3c.dom.Document tokenDoc =	javax.xml.parsers.DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(					"test.wml");tokenDoc.getAttributes().item(0)					

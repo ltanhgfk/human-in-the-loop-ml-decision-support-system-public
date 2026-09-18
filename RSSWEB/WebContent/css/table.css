@@ -1,0 +1,169 @@
+
+table.gridtable-xemkhht {
+	
+	font-size:13px; 
+	color:#000;
+	border-width: 1px;
+	border-color: #BEBAED;
+	border-collapse: collapse;
+}
+table.gridtable-xemkhht th {
+	border-width: 1px;
+	padding: 5px;
+	border-style: solid;
+	border-color: #BEBAED;
+	background-color: #dedede;
+}
+table.gridtable-xemkhht td {
+	border-width: 1px;
+	padding: 5px;
+	border-style: solid;
+	border-color: #BEBAED;
+	background-color: #ffffff;
+}
+
+
+ .bolditalic
+{
+	
+	font-weight: bold;
+	font-style: italic;	
+	text-align: left;
+	color: #2D427B;
+	background-color: #C7DFDE;
+}
+ .tenmon
+{	
+	text-align: left;
+	min-width: 50px;
+	
+}
+
+/****** Thong tin SV *******/
+table.gridtable-ttsv {
+	
+	font-size:12px;	
+	border-width: 1px;
+	border-color: #DDDDDD;
+	border-collapse: collapse;
+}
+table.gridtable-ttsv th {
+	border-width: 1px;
+	padding: 8px;
+	border-style:dashed;
+	border-color: #DDDDDD;
+	background-color: #dedede;
+}
+table.gridtable-ttsv td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: dashed;
+	border-color: #DDDDDD;
+	background-color: #fff;
+}
+
+table.gridtable-ttsv .col1{
+	
+	background-color: #eed;
+}
+
+
+/****** Thong tin SV *******/
+
+/****** Cap nhat hoc phan *******/
+table.altrowstable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #a9c6c9;
+	border-collapse: collapse;
+}
+table.altrowstable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+	
+}
+table.altrowstable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+.oddrowcolor{
+	background-color:#d4e3e5;
+}
+.evenrowcolor{
+	background-color:#c3dde0;
+}
+
+/****** End Cap nhat hoc phan *******/
+
+
+  
+  
+table.gridtable-blank {
+	
+	font-size:13px; 
+	color:#000;
+	border-width: 1px;
+	border-color: #BEBAED;
+	border-collapse: collapse;
+	border:none;
+}
+table.gridtable-blank  th {
+	border-width: 1px;
+	padding: 3px;
+	border-style: solid;
+	border-color: #BEBAED;
+	background-color: #dedede;
+	border:none;
+}
+table.gridtable-blank  td {
+	border-width: 1px;
+	padding: 3px;
+	border-style: solid;
+	border-color: #BEBAED;
+	background-color: #ffffff;	
+	border:none;	
+}
+  
+  
+  
+/***** BOX shadow ****/
+.boxshadow-ttsv 
+{ 	border:solid 1px #C7DFDE; 
+ 	text-align:center; 
+ 	background:#fff; 
+ 	padding:20px;
+   -moz-border-radius: 5px;  
+   -webkit-border-radius: 5px;
+    border-radius: 5px;    
+    }
+
+/* =Your Generated css */
+.boxshadow-ttsv{
+-moz-box-shadow:10px  10px 5px #000000;
+-webkit-box-shadow:10px  10px 5px #000000;
+box-shadow:4px 4px 3px #BDBDBD
+}
+
+/*****  END BOX shadow ****/
+
+.boxsquare
+{
+
+	margin:10px;
+	padding:20px;
+	width:600px;
+
+    -moz-box-shadow:10px 10px 5px #000000;
+    -webkit-box-shadow:10px 10px 5px #000000;
+   	box-shadow:0px 0px 5px #BDBDBD
+
+}
+   
+
+   
