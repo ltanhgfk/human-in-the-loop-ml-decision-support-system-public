@@ -54,7 +54,7 @@ public class Vectorize {
 			}
 			else
 			{
-				//text = text.replaceAll("[,:;?“”–!%&+-<>$#@^={}|.1234567890()\"'\\/…]", "");
+				// Legacy punctuation normalization; kept intentionally simple for the public UTF-8 source.
 				text = text.toLowerCase();
 				VietTokenizer tokenizer = new VietTokenizer();
 				BufferedReader keywordFile = new BufferedReader(new InputStreamReader(new FileInputStream("./classifications/keywordlist.txt"), "UTF8"));
@@ -65,7 +65,7 @@ public class Vectorize {
 				keywordFile.close();
 				Set<String> keySet = new LinkedHashSet<String>();
 				tokenArrayString = tokenizer.tokenize(text);
-				tokenArrayString = tokenArrayString[0].replaceAll("[,:;?“”–!%&+-<>$#@^={}|.1234567890()\"'\\/…]", "").split(" ");
+				tokenArrayString = tokenArrayString[0].replaceAll("[,;:!?%&+\\-<>$#@^={}|.1234567890()\"\'\\/?]", "").split(" ");
 				for (int j=0;j<tokenArrayString.length;j++)
 					{
 						keySet.add(tokenArrayString[j].toLowerCase());
