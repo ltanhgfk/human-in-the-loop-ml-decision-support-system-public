@@ -4,27 +4,33 @@
 
 ## Overview
 
-This repository preserves the source-level implementation of a Master's research project in Information Systems. The system combines Vietnamese text processing, domain-specific feature engineering, Support Vector Machine (SVM) classification, expert routing, human verification, similarity-based retrieval, and retraining.
+This repository preserves the source-level implementation of a Master's research project in Information Systems.
 
-The central design principle is **human-in-the-loop decision support**: machine learning assists coordinators and domain experts; it does not replace them.
+The system combines Vietnamese text processing, domain-specific feature engineering, Support Vector Machine (SVM) classification, expert routing, human verification, similarity-based retrieval, and retraining.
 
-## Research context
+The central design principle is **human-in-the-loop decision support**: machine learning assists coordinators and domain experts rather than replacing them.
 
-The work was developed as a semi-automatic agricultural advisory system. The research explicitly treated the semi-automatic system as an initial stage toward a more automated advisory system, with real operational data intended to support later development.
+## Research Context
 
-Academic publication:
+The system was developed as a semi-automatic agricultural advisory system for rice-related questions through mobile information services.
 
-**Lương Thế Anh, Nguyễn Thái Nghe, Nguyễn Chí Ngôn (2014). _Xây dựng hệ thống hỗ trợ khuyến nông trên cây lúa qua mạng thông tin di động_. Tạp chí Khoa học Trường Đại học Cần Thơ, 33, 9–21.**
+The research investigated how classical machine learning could be integrated into a practical information system while retaining human verification and domain-expert involvement.
 
-## System workflow
+### Academic Publication
+
+Lương Thế Anh, Nguyễn Thái Nghe, Nguyễn Chí Ngôn (2014).
+
+**Xây dựng hệ thống hỗ trợ khuyến nông trên cây lúa qua mạng thông tin di động.**
+
+*Tạp chí Khoa học Trường Đại học Cần Thơ*, 33, 9–21.
+
+## System Workflow
 
 ```text
 SMS/MMS
    │
    ├── Vietnamese word segmentation
-   │
    ├── Stop-word removal
-   │
    └── Keyword / feature construction
               │
               ▼
@@ -55,76 +61,169 @@ SMS/MMS
           Retraining
 ```
 
-See [`docs/ML_PIPELINE.md`](docs/ML_PIPELINE.md) for implementation-level details and terminology.
+## Main Components
 
-## Main research/technical components
+### Vietnamese Text Processing
 
-- Vietnamese word segmentation and stop-word processing
-- Domain-specific keyword construction
-- Sparse bag-of-words feature representation
-- Linear-kernel SVM training and prediction
-- Multi-class agricultural topic classification
-- Separate machine and human classification states
-- Expert-to-topic routing
-- Human-assisted model retraining
-- Term-frequency cosine similarity for retrieval of previously answered questions
-- Java backend + JSP/Servlet web application + MySQL persistence
+The system processes Vietnamese agricultural questions before classification, including word segmentation and stop-word processing.
 
-## What this repository does **not** claim
+### Feature Engineering
 
-This is a historical ML system. It is **not** presented as a modern deep-learning, transformer, LLM, or RAG implementation.
+Domain-specific keywords and sparse bag-of-words representations are used to transform text into machine-learning features.
 
-The original system supported MMS/image handling, but automatic image classification was identified as future work rather than a demonstrated component of the thesis implementation. Likewise, the similarity component uses term-frequency vectors and cosine similarity; it is not semantic embedding search or RAG.
+### Machine Learning
 
-## Reported evaluation
+The classification component uses a **Support Vector Machine (SVM)** with a linear kernel for multi-class agricultural topic classification.
 
-The public repository preserves a dated cross-validation summary from the original project:
+### Human-in-the-Loop Decision Support
 
-- **10-fold cross-validation accuracy: 68.35%**
-- Recorded training timestamp: **2014-03-06 13:22:32**
+Machine classification is combined with human verification and domain-expert routing. The system is designed to support human decision-makers rather than operate as a fully autonomous advisory system.
 
-This figure should be interpreted as historical research evidence, not as a modern benchmark. The original training data and trained models are intentionally not included in this public release.
+### Similarity-Based Retrieval
 
-## Repository structure
+Previously answered questions can be retrieved using term-frequency representations and cosine similarity.
+
+This component is a classical information-retrieval mechanism. It is **not** semantic embedding search and is **not** Retrieval-Augmented Generation (RAG).
+
+### Expert Routing
+
+Classified agricultural questions can be routed toward the appropriate domain expert for human response and verification.
+
+### Model Retraining
+
+Human-labelled information can be incorporated into the learning process to support subsequent model retraining.
+
+## Reported Evaluation
+
+The preserved research record reports:
+
+**10-fold cross-validation accuracy: 68.35%**
+
+Recorded training timestamp:
+
+`2014-03-06 13:22:32`
+
+The reported accuracy is retained as historical research evidence from the original project.
+
+It should not be interpreted as a modern benchmark or as a directly comparable result against contemporary machine-learning systems.
+
+## Historical Scope
+
+This repository represents a historical research and software system.
+
+It is **not** presented as a modern deep-learning, transformer, LLM, embedding-search, or RAG implementation.
+
+The system reflects the technology and research design of its original development period, including classical machine learning, sparse text representations, expert involvement, and workflow-based information-system components.
+
+The original system included MMS/image handling. Automatic image classification, however, was identified as future work rather than a demonstrated component of the thesis implementation.
+
+## Technology Stack
+
+The preserved implementation primarily consists of:
+
+- Java
+- JSP / Servlet web application
+- MySQL
+- Vietnamese NLP / text-processing components
+- Linear-kernel SVM
+- Sparse text feature representation
+- Term-frequency cosine similarity
+- SMS/MMS-oriented application components
+
+The codebase targets a legacy Java/web environment and does not provide a modern Maven/Gradle one-command build.
+
+## Repository Structure
 
 ```text
-RSSAPP/                         Java backend and ML/runtime code
-RSSWEB/                         JSP/Servlet web portal
-config/                         Safe example runtime configuration
-data/                           Public data documentation only
-database/                       Sanitized schema + fictional sample data
-docs/                           Architecture, ML, build, privacy, history
-PUBLIC_REPOSITORY_MANIFEST.md   Public-release audit manifest
+RSSAPP/       Java backend, NLP, classification and runtime components
+RSSWEB/       JSP/Servlet web application
+config/       Safe example runtime configuration
+data/         Public data documentation
+database/     Sanitized database schema and fictional demonstration data
+docs/         Research, architecture, build, privacy and limitation documentation
 ```
 
-## Public-release policy
+## Public Release
+
+This repository is a sanitized public research release.
 
 The public version deliberately excludes:
 
 - real or historical user records
-- phone numbers, addresses, emails, IDs, or credentials
-- SMS/MMS payloads and private images
-- historical database dumps/backups
-- trained models and private training datasets
-- compiled binaries and dependency JARs
-- the original private Git history
+- phone numbers, addresses, email addresses, personal identifiers
+- credentials
+- private SMS/MMS payloads
+- private images
+- historical database dumps or backups
+- private training datasets
+- trained model files
+- compiled binaries
+- dependency JAR files
+- private runtime configuration
 
-Only fictional demonstration records are included in `database/sample_data.sql`.
+Only sanitized or fictional demonstration material is intended to remain in the public repository.
 
-See:
-
-- [`docs/DATA_PRIVACY.md`](docs/DATA_PRIVACY.md)
-- [`docs/BUILD.md`](docs/BUILD.md)
-- [`docs/KNOWN_LIMITATIONS.md`](docs/KNOWN_LIMITATIONS.md)
-- [`docs/DEPENDENCIES.md`](docs/DEPENDENCIES.md)
-- [`docs/MY_CONTRIBUTION.md`](docs/MY_CONTRIBUTION.md)
+See [`docs/DATA_PRIVACY.md`](docs/DATA_PRIVACY.md) and [`PUBLIC_REPOSITORY_MANIFEST.md`](PUBLIC_REPOSITORY_MANIFEST.md) for details.
 
 ## Reproduction
 
-This codebase targets legacy Java/web/SMS/MMS infrastructure and does not contain a modern Maven/Gradle build. A complete historical deployment may require compatible third-party libraries, database setup, and SMS/MMS gateway hardware or services.
+This repository is primarily a **research/software archive and source-level reconstruction**.
 
-The public release is therefore best understood as a **research/software archive and source-level reconstruction**, not a one-command reproducible benchmark.
+A complete historical deployment may require a compatible legacy Java environment, third-party libraries, database configuration, historical runtime configuration, and compatible SMS/MMS gateway infrastructure or services.
 
-## Historical significance
+The original private training data and trained models are not included in the public release.
 
-The research provides an early example of a practical workflow in which classical machine learning is embedded inside a larger information system and combined with human validation and expert knowledge. The public release preserves that architecture without retroactively attributing modern AI techniques to the original work.
+Therefore, the repository should not be interpreted as a one-command reproducible benchmark.
+
+See [`docs/BUILD.md`](docs/BUILD.md) for build information.
+
+## Documentation
+
+Additional documentation is available in the `docs/` directory:
+
+- [`docs/ML_PIPELINE.md`](docs/ML_PIPELINE.md) — machine-learning pipeline and terminology
+- [`docs/BUILD.md`](docs/BUILD.md) — build and environment information
+- [`docs/DATA_PRIVACY.md`](docs/DATA_PRIVACY.md) — public-release and privacy policy
+- [`docs/KNOWN_LIMITATIONS.md`](docs/KNOWN_LIMITATIONS.md) — known technical and research limitations
+- [`docs/DEPENDENCIES.md`](docs/DEPENDENCIES.md) — dependency information
+- [`docs/MY_CONTRIBUTION.md`](docs/MY_CONTRIBUTION.md) — contribution and research context
+
+## Research Contribution
+
+The project demonstrates the integration of:
+
+- classical machine learning
+- Vietnamese text processing
+- domain-specific feature engineering
+- information retrieval
+- human verification
+- expert knowledge
+- model retraining
+- decision-support workflow
+
+The main research perspective is the integration of machine learning into a larger information system while maintaining a **human-in-the-loop** process for verification, expert involvement, and decision support.
+
+## Limitations
+
+1. The system is based on classical machine-learning methods and legacy software infrastructure.
+2. The original training data and trained models are not included in the public release.
+3. The reported evaluation represents the historical research environment and dataset.
+4. The public repository is not intended to reproduce the complete historical production environment.
+5. Similarity retrieval is based on term-frequency vectors and cosine similarity rather than modern semantic embeddings.
+6. The system should not be interpreted as an autonomous agricultural advisory system.
+
+## Historical Research Note
+
+This repository is preserved as a research and software artifact.
+
+The objective of the public release is to make the software architecture, machine-learning approach, research context, and human-in-the-loop design inspectable while avoiding the publication of private or sensitive historical data.
+
+The project therefore preserves the distinction between:
+
+**machine prediction → human verification → expert decision support**
+
+rather than retroactively describing the original system using modern AI terminology.
+
+---
+
+**Research area:** Information Systems · Machine Learning · Natural Language Processing · Decision Support Systems · Human-in-the-Loop AI

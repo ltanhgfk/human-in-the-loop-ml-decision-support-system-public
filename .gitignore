@@ -33,3 +33,15 @@ RSSWEB/WebContent/images/
 
 # Dependency binaries
 *.jar
+
+# Environment / credentials
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.jks
+
+# Logs
+*.log
+*.log.lck
